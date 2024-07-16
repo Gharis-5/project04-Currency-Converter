@@ -1,14 +1,15 @@
 {
-  "name": "project04-currency-converter",
-  "version": "1.0.0",
-  "description": "",
+  "name": "gharis-currency-converter",
+  "version": "1.0.3",
+  "description": "Cli based currency converter",
   "main": "index.js",
   "type": "module",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Gharis Khalil",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^9.2.15"
   },

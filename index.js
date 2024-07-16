@@ -1,4 +1,6 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
+// Base Currency USD
 const currency = {
     USD: 1,
     GBP: 0.91,
@@ -11,23 +13,23 @@ let user_input = await inquirer.prompt([
         name: "for",
         type: "list",
         message: "Enter for Currency",
-        choices: ["USD", "GBP", "INR", "PKR", "EUR"]
+        choices: ["USD", "GBP", "INR", "PKR", "EUR"],
     },
     {
         name: "to",
         type: "list",
         message: "Enter to Currency",
-        choices: ["USD", "GBP", "INR", "PKR", "EUR"]
+        choices: ["USD", "GBP", "INR", "PKR", "EUR"],
     },
     {
         name: "amount",
         type: "input",
-        message: "Enter Your Amount"
-    }
+        message: "Enter Your Amount",
+    },
 ]);
-let forAmount = currency[user_input.from];
+let forAmount = currency[user_input.for];
 let toAmount = currency[user_input.to];
 let amount = user_input.amount;
 let baseCurrency = amount / forAmount;
 let covertedAmount = baseCurrency * toAmount;
-console.log(covertedAmount);
+console.log(covertedAmount.toFixed(2));
